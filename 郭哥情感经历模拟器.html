@@ -38,6 +38,28 @@
     color: green;
   }
 </style>
+<audio id="audioPlayer" src="匆匆那年 王菲_爱给网_aigei_com.mp3"></audio>
+
+<script>
+  // Modify the showConsequenceAndNext function to play music when the出轨 option is selected
+  function showConsequenceAndNext(chapterNumber, choice) {
+    if (hasChosen) return; // Only allow the first choice to proceed
+    
+    var consequenceId = 'consequence-' + choice;
+    var consequence = document.getElementById(consequenceId);
+    consequence.style.display = 'block';
+    
+    // Play music when the 'D1-E2' choice is selected
+    if (choice === 'D1-E2') {
+      var audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.play();
+    }
+    
+    // Rest of your existing code...
+  }
+
+  // Rest of your existing script...
+</script>
 <script>
 function startJourney() {
   // 隐藏开始页面
@@ -353,6 +375,8 @@ function showConsequenceAndNext(chapterNumber, choice) {
     } else if (choice === 'D1-E2') {
       document.getElementById('choice-D1-E2-F1').style.display = 'block';
       document.getElementById('choice-D1-E2-F2').style.display = 'block';
+      var audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.play();
     }
   } else if (chapterNumber === 6) {
     if (choice === 'D1-E2-F1') {
